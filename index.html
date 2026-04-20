@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { 
+    background: #2c2c2c; /* Fondo oscuro para que resalte el pergamino */
+    display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0;
+  }
+
+  .pergamino-wrapper {
+    position: relative;
+    width: 320px;
+    cursor: pointer;
+  }
+
+  /* El rodillo de madera/oro */
+  .rodillo {
+    height: 40px;
+    background: linear-gradient(to bottom, #bf953f, #fcf6ba, #b38728);
+    border-radius: 10px;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  }
+
+  /* El papel que se esconde dentro */
+  .contenido-papel {
+    width: 90%;
+    margin: 0 auto;
+    height: 0;
+    overflow: hidden;
+    transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #fdf5e6;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.1), 10px 0 20px rgba(0,0,0,0.2);
+    border-left: 2px solid #d4af37;
+    border-right: 2px solid #d4af37;
+  }
+
+  .contenido-papel img {
+    width: 100%;
+    display: block;
+  }
+
+  /* Animación al hacer click */
+  .abierto .contenido-papel {
+    height: 580px; /* Ajusta esto al largo de tu imagen */
+  }
+
+  .instruccion {
+    color: white;
+    text-align: center;
+    font-family: serif;
+    margin-bottom: 20px;
+    animation: palpito 2s infinite;
+  }
+
+  @keyframes palpito {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+  }
+</style>
+</head>
+<body>
+
+<div class="main">
+  <div class="instruccion">✨ Toca el rodillo para abrir ✨</div>
+  
+  <div class="pergamino-wrapper" onclick="this.classList.toggle('abierto')">
+    <div class="rodillo"></div> <div class="contenido-papel">
+        <img src="https://ibb.co/LdH13HXX"> </div>
+    
+    <div class="rodillo"></div> </div>
+</div>
+
+</body>
+</html>
